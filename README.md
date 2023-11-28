@@ -17,4 +17,4 @@ To make the data analysis over the data fetched from the part2 & part3.
 
 # Dependencies: 
 
-pip install newsapi-python
+python3 -m pip install newsapi-python 
