@@ -5,8 +5,8 @@ setup(
     version='0.1.0',
     author='Shivakrishna Macha',
     author_email='smacha@mail.yu.edu',
-    description = "A package for extracting and analyzing web data"
-    long_description_content_type = "text/markdown"
+    description="A package for extracting and analyzing web data",
+    long_description_content_type="text/markdown",  # Fixed attribute name and added a comma
     url='https://github.com/shivakrishna67/AnalyticalProgramming-Project-2',
     packages=['Motor_vehicle_collisions'],
     install_requires=[
