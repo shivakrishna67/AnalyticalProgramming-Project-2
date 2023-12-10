@@ -1,3 +1,43 @@
+"""Sitemap Parser
+
+This module provides a SitemapParser class for extracting URLs from sitemap XML files based on the information provided in the robots.txt file of a specified base URL. It uses the requests library for fetching data and the xml.etree.ElementTree module for parsing XML content. The extracted URLs are organized into a pandas DataFrame for easy analysis and further processing.
+
+Usage:
+1. Create an instance of the SitemapParser with the base URL.
+2. Use the `parse_all_sitemaps` method to fetch and parse all sitemaps, returning the result as a DataFrame.
+
+Example:
+    ```python
+    # Example usage with a website
+    website_url = "https://www.hackerrank.com/"
+    sitemap_parser = SitemapParser(website_url)
+    result_df = sitemap_parser.parse_all_sitemaps()
+
+    # Display the DataFrame
+    print(result_df)
+    ```
+
+Classes:
+- SitemapParser: Main class for parsing sitemaps.
+
+Methods:
+- __init__(self, base_url): Initialize the SitemapParser with a base URL.
+- fetch_robots_txt(self): Fetch the content of the robots.txt file for the specified URL.
+- extract_sitemaps(self, robots_content): Extract sitemap URLs from the content of robots.txt.
+- parse_sitemap(self, sitemap_url): Parse the sitemap XML content for a given sitemap URL.
+- parse_all_sitemaps(self): Parse all sitemaps for the specified base URL and return the result in a DataFrame.
+
+Attributes:
+- base_url (str): The base URL used to parse the robots.txt data to retrieve sitemap data.
+- sitemaps (list): A list to store extracted sitemap URLs.
+
+Dependencies:
+- requests: Used for making HTTP requests.
+- xml.etree.ElementTree: Used for parsing XML content.
+- pandas: Used for organizing and displaying data in a DataFrame.
+- gzip: Used for decompressing gzip-encoded content.
+"""
+
 import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
