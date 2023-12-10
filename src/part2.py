@@ -1,39 +1,3 @@
-"""News API Wrapper
-
-This module provides a NewsApi class for interacting with the News API to retrieve information about top headlines, articles, and sources related to Bitcoin. It utilizes the NewsApiClient library for making API requests and pandas for organizing data in a DataFrame.
-
-Usage:
-1. Create an instance of the NewsApi class.
-2. Use the methods provided to fetch information from the News API.
-3. Utilize the `getDatatoDF` method to convert the requested data into a pandas DataFrame.
-
-Example:
-    ```python
-    # Example usage with NewsApi class
-    news_api = NewsApi()
-    news_df = news_api.getDatatoDF()
-    print(news_df.head())
-    ```
-
-Classes:
-- NewsApi: Main class for interacting with the News API.
-
-Methods:
-- __init__(self): Initialize the NewsApi class with a News API key.
-- getTopHeadLines(self): Retrieve top headlines related to Bitcoin from the News API.
-- getAllArticles(self): Retrieve all articles related to Bitcoin from specific sources within a date range.
-- getSources(self): Retrieve sources providing information about Bitcoin from the News API.
-- getDatatoDF(self): Convert the requested data into a DataFrame.
-
-Attributes:
-- newsapi: Instance of the NewsApiClient for making API requests.
-- top_headlines: Storage for top headlines related to Bitcoin.
-- all_articles: Storage for all articles related to Bitcoin from specific sources.
-- sources: Storage for sources providing information about Bitcoin.
-
-Dependencies:
-- newsapi: Used for interacting with the News API.
-- pandas: Used for organizing and displaying data in a DataFrame."""
 
 from newsapi import NewsApiClient
 import pandas as pd
