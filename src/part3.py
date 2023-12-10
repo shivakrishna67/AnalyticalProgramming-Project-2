@@ -1,3 +1,45 @@
+"""Scholarly Web Scraper
+
+This module provides a Scholarly class for fetching and parsing information from Google Scholar articles.
+It utilizes the requests library for making HTTP requests and BeautifulSoup for parsing HTML content.
+
+Usage:
+1. Create an instance of the Scholarly class.
+2. Use the `fetch_web_data` method to fetch web data for a specified number of articles and convert it into a DataFrame.
+
+Example:
+    ```python
+    # Example usage with Scholarly class
+    scholarly = Scholarly()
+    df = scholarly.fetch_web_data(int(input("Enter num of articles: ")))
+    print(f"Dimensions of articles: {df.shape}")
+    df.head()
+    ```
+
+Classes:
+- Scholarly: Main class for fetching and parsing information from Google Scholar articles.
+
+Methods:
+- __init__(self): Initialize the Scholarly class.
+- get_soup(self, url): Retrieve and parse HTML content from a given URL.
+- get_title(self, title): Extract the title of an article from the provided BeautifulSoup object.
+- get_abstract_url(self, title): Extract the URL for the title of an article from the provided BeautifulSoup object.
+- get_article_info(self, article): Extract author, year, and published information from the provided BeautifulSoup object.
+- get_tags(self, soup): Extract information from various tags in the provided BeautifulSoup object.
+- get_abstract(self, abstr): Extract the text of an article abstract from the provided BeautifulSoup object.
+- fetch_web_data(self, records): Fetch web data for a specified number of articles and convert it into a DataFrame.
+
+Attributes:
+- None
+
+Dependencies:
+- requests: Used for making HTTP requests.
+- bs4 (BeautifulSoup): Used for parsing HTML content.
+- re: Used for regular expression operations.
+- time: Used for introducing delays.
+- pandas: Used for organizing and displaying data in a DataFrame."""
+
+
 import requests
 from bs4 import BeautifulSoup
 import re
